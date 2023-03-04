@@ -373,11 +373,13 @@ img {
 }
 .footer-content {
     display: flex;
-    /* gap: 120px; */
+    justify-content: space-between;
+}
+.footer-social-form {
+    display: flex;
 }
 .footer-content-logo {
     max-width: 264px;
-    margin-right: 120px;
 }
 .footer-logo {
     color: var(--secondery-bcg-color);
@@ -433,10 +435,46 @@ img {
 .footer-socials-link:focus {
     background-color: var(--secondery-background-socials);
 }
+.footer-form-text {
+    color: var(--text-white-color);
+    font-weight: 500;
+    line-height: 1.5;
+    margin-bottom: 16px;
+}
 .footer-form-info {
     display: flex;
     align-items: center;
     gap: 24px;
+}
+.footer-form-input {
+    width: 264px;
+    background-color: transparent;
+    color: var(--text-white-color);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+    border-radius: 4px;
+    padding: 10px 0 10px 16px   ;
+    resize: none;
+    outline: none;
+}
+.footer-form-label {
+    position: relative;
+}
+.footer-form-field {
+    position: relative;
+}
+.footer-form-input::placeholder {
+    position: absolute;
+    top: 50%;
+    left: 16px;
+    color: var(--prymery-text-placeholder);
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.04em;
+    transform: translateY(-50%);
 }
 .footer-form-button {
     display: flex;
@@ -656,12 +694,11 @@ img {
     margin-bottom: 16px;
 }
 .form-field {
+    position: relative;
     flex-basis: 100%;
 }
 
 .form-label {
-    position: relative;
-    display: block;
     color: var(--secondery-text-color);
     font-family: 'Roboto', sans-serif;
     font-style: normal;
@@ -675,12 +712,30 @@ img {
     width: 100%;
     border: 1px solid rgba(33, 33, 33, 0.2);
     border-radius: 4px;
-    padding: 10px 0;
+    padding: 10px 0 10px 38px;
     resize: none;
-    }
+    outline: none;
+    transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.form-input:focus {
+    border: 1px solid var(--primery-brend-color);
+}
+.form-input:focus + .form-icon {
+    fill: var(--primery-brend-color);
+}
+.form-icon {
+    position: absolute;
+    top: 26px;
+    left: 16px;
+    display: block;
+    width: 18px;
+    height: 24px;
+    fill: var(--primery-bcg-color);
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
 .form-input::placeholder {
     position: absolute;
-    top: 12px;
+    top: 8px;
     left: 16px;
     color: var(--prymery-text-placeholder);
     font-family: 'Roboto', sans-serif;
@@ -713,9 +768,7 @@ img {
     letter-spacing: 0.04em;
 }
 .privacy-input {
-    width: 16px;
-    height: 16px;
-    margin-right: 8px;
+    appearance: none;
 }
 .modal-button {
     padding: 16px 32px;
