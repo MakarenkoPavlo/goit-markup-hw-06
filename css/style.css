@@ -745,11 +745,35 @@ img {
     line-height: 1.17;
     letter-spacing: 0.04em;
 }
-.form-pryvacy-input {
+.form-checkbox {
+    position: relative;
+    display: flex;
+    align-items: center;
     width: 100%;
     margin-bottom: 24px;
 }
-.privacy-text {
+.form-checkbox-icon {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 16px;
+    background-image: url('../images/property-default.svg');
+    fill: var(--primery-bcg-color);
+    transition: background-image 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.checkbox-input:checked + .form-checkbox-icon {
+    background-image: url('../images/property-click.svg');
+}
+.checkbox-input {
+    appearance: none;
+}
+.checkbox-input:checked + .form-checkbox-icon {
+    border-color: #31D0AA;
+}
+.checkbox-text {
+    position: relative;
     color: var(--checkbox-text);
     font-family: 'Roboto', sans-serif;
     font-style: normal;
@@ -757,8 +781,9 @@ img {
     font-size: 12px;
     line-height: 1.17;
     letter-spacing: 0.04em;
+    padding-left: 24px;
 }
-.privacy-text-item {
+.checkbox-text-item {
     color: var(--primery-brend-color);
     font-family: 'Roboto', sans-serif;
     font-style: normal;
@@ -766,9 +791,6 @@ img {
     font-size: 12px;
     line-height: 1.33;
     letter-spacing: 0.04em;
-}
-.privacy-input {
-    appearance: none;
 }
 .modal-button {
     padding: 16px 32px;
